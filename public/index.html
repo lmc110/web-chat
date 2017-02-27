@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title> Real Time Chat </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <span id="nickname"></span>
+
+    <div class="chat pure-u-1">
+      <div class="top-bar">
+        <i class="fa fa-comment"></i>Welcome to the Chat!
+      </div>
+
+      <ul id="thread">
+      </ul>
+
+      <form class="chat-input" id="message-form">
+        <input id="message" type="text" autocomplete="off" placeholder="Write your message.." />
+        <button type="submit" class="pure-button pure-button-primary"><i class="fa fa-paper-plane-o"></i></button>
+      </form>
+    </div>
+
+
+    <div id="online-list">
+      <h2>Users Online</h2>
+      <ul id="roster">
+
+      </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+
+  </body>
+</html>
