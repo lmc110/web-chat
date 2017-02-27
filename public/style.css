@@ -3,6 +3,10 @@ html, body {
   overflow: hidden;
 }
 
+body {
+  background-color: #3bc3ad;
+}
+
 .chat {
   width: 75%;
   float: left;
@@ -10,8 +14,6 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  border-top-right-radius: 0.5em;
-  border-bottom-right-radius: 0.3em;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 800, color-stop(0%, #2d5986), color-stop(800%, #1f4060));
   background: radial-gradient(circle, #2d5986, #1f4060);
   overflow: auto;
@@ -44,7 +46,6 @@ html, body {
 
 .top-bar {
   font-family: sans-serif;
-  border-top-right-radius: 0.3em;
   box-shadow: 0 6px 6px -6px black;
   color: white;
   font-size: 1.4em;
@@ -90,4 +91,5 @@ html, body {
 #online-list {
   width: 25%;
   float: right;
+  background-color: #3bc3ad;
 }
