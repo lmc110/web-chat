@@ -3,6 +3,16 @@ var usersOnline = [];
 // initializing socket, connection to server
 var socket = io.connect('http://192.168.1.22:7777');
 
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+
 socket.on('connect', function(data) {
   socket.emit('join', prompt("What's your nickname"));
 });

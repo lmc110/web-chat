@@ -8,9 +8,8 @@ body {
 }
 
 .chat {
-  width: 75%;
   display: inline-block;
-  height: 75%;
+  height: 85%;
   margin: 0;
   overflow; auto;
   padding: 0;
@@ -31,10 +30,13 @@ body {
 }
 
 #message {
-  width: 80%;
   padding-left: 0.2em;
   color: black;
   margin-left: 0.9em;
+}
+
+.pure-button-primary {
+  margin-bottom: 0.5em;
 }
 
 .fa-comment {
@@ -74,12 +76,8 @@ body {
 
 #online-list {
   font-family: sans-serif;
-  width: 25%;
-  float: right;
-  position: absolute;
   top: 60px;
   right: 0;
-  background-color: #3bc3ad;
 }
 
 #online-list h2 {
@@ -97,4 +95,35 @@ body {
 .chat.pure-u-1 {
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.fa-users {
+  margin-left: 0.2em;
+  margin-right: 0.5em;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #3bc3ad;
+  overflow-x: hidden;
+  padding-top: 15px;
+  transition: 0.5s;
+}
+
+.closebtn {
+  text-decoration: none;
+  color: #393939;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }

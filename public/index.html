@@ -10,7 +10,7 @@
   <body>
     <span id="nickname"></span>
     <div class="top-bar">
-      <i class="fa fa-comment"></i>Welcome to the Chat!
+      <i onclick="openNav()" class="fa fa-users" aria-hidden="true"></i>  Welcome to the Chat!
     </div>
     <div id="chat" class="chat pure-u-1">
         <ul id="thread">
@@ -25,11 +25,14 @@
       </form>
     </div>
 
-    <div id="online-list">
-      <h2>Users Online</h2>
-      <ul id="roster">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div id="online-list">
+        <h2>Users Online</h2>
+        <ul id="roster">
 
-      </ul>
+        </ul>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
