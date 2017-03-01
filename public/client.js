@@ -10,6 +10,7 @@ socket.on('connect', function(data) {
 // listener for 'thread' event, which updates messages
 socket.on('thread', function(data) {
   $('#thread').append('<li>' + data['nickname'] + " said: " + data['message'] + '</li>');
+  $('#chat').scrollTop($('#chat')[0].scrollHeight);
 });
 
 socket.on('joined', function(data) {

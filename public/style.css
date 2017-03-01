@@ -9,14 +9,13 @@ body {
 
 .chat {
   width: 75%;
-  float: left;
   display: inline-block;
+  height: 75%;
   margin: 0;
+  overflow; auto;
   padding: 0;
-  height: 100vh;
   background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 800, color-stop(0%, #2d5986), color-stop(800%, #1f4060));
   background: radial-gradient(circle, #2d5986, #1f4060);
-  overflow: auto;
 }
 
 .chat-input {
@@ -34,7 +33,6 @@ body {
 #message {
   width: 80%;
   padding-left: 0.2em;
-
   color: black;
   margin-left: 0.9em;
 }
@@ -54,20 +52,6 @@ body {
   position: relative;
   overflow: hidden;
   padding-bottom: 0.7em;
-}
-
-.top-bar::before {
-  content: "";
-  position: absolute;
-  top: -100%;
-  left: 0;
-  right: 0;
-  bottom: -100%;
-  opacity: 0.25;
-}
-
-.top-bar > * {
-  position: relative;
 }
 
 #thread {
@@ -92,6 +76,9 @@ body {
   font-family: sans-serif;
   width: 25%;
   float: right;
+  position: absolute;
+  top: 60px;
+  right: 0;
   background-color: #3bc3ad;
 }
 
@@ -105,4 +92,9 @@ body {
 
 #roster li {
   color: #223c58;
+}
+
+.chat.pure-u-1 {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

@@ -9,21 +9,21 @@
   </head>
   <body>
     <span id="nickname"></span>
+    <div class="top-bar">
+      <i class="fa fa-comment"></i>Welcome to the Chat!
+    </div>
+    <div id="chat" class="chat pure-u-1">
+        <ul id="thread">
 
-    <div class="chat pure-u-1">
-      <div class="top-bar">
-        <i class="fa fa-comment"></i>Welcome to the Chat!
-      </div>
+        </ul>
+    </div>
 
-      <ul id="thread">
-      </ul>
-
+    <div id="message-input-container" class="pure-u-1">
       <form class="chat-input" id="message-form">
         <input id="message" type="text" autocomplete="off" placeholder="Write your message.." />
         <button type="submit" class="pure-button pure-button-primary"><i class="fa fa-paper-plane-o"></i></button>
       </form>
     </div>
-
 
     <div id="online-list">
       <h2>Users Online</h2>
