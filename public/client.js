@@ -19,7 +19,8 @@ socket.on('connect', function(data) {
 
 // listener for 'thread' event, which updates messages
 socket.on('thread', function(data) {
-  $('#thread').append('<li>' + data['nickname'] + " said: " + data['message'] + '</li>');
+  console.log(data['color']);
+  $('#thread').append('<li style="background-color: ' + data['color'] + ';">' + data['nickname'] + " said: " + data['message'] + '</li>');
   $('#chat').scrollTop($('#chat')[0].scrollHeight);
 });
 
@@ -27,6 +28,7 @@ socket.on('joined', function(data) {
   usersOnline = data['clients'];
   if(!$('#nickname').attr('data-name')) {
     $('#nickname').attr('data-name', data['username']);
+    $('#nickname').attr('data-color', data['color']);
   }
   console.log(usersOnline);
   $('#roster').empty();
@@ -47,9 +49,11 @@ socket.on('updateList', function(data) {
 $('#message-form').submit(function() {
   var message = $('#message').val();
   var name = $('#nickname').attr('data-name');
+  var color = $('#nickname').attr('data-color');
   socket.emit('messages', {
     'message': message,
-    'nickname': name
+    'nickname': name,
+    'color': color
   });
   this.reset();
   return false;

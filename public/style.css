@@ -35,7 +35,7 @@ body {
   margin-left: 0.9em;
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 70%;
+  width: 55%;
 }
 
 .pure-button-primary {
@@ -64,7 +64,6 @@ body {
 #thread li {
   font-family: sans-serif;
   font-weight: 600;
-  background-color: #00cccc;
   margin: 1em 2em;
   padding: 0.5em;
   color: white;
@@ -135,7 +134,9 @@ body {
 }
 
 @media screen and (min-width: 35.5.em) {
-
+  #message {
+    width: 65%;
+  }
 }
 
 @media screen and (min-width: 48em) {
