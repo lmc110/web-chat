@@ -5,10 +5,12 @@ html, body {
 
 body {
   background-color: #3bc3ad;
+  margin: 0;
 }
 
 .chat {
   display: inline-block;
+  width: 100%;
   height: 85%;
   margin: 0;
   overflow; auto;
@@ -164,13 +166,4 @@ body {
   #online-list h2 {
     font-size: 1.3em;
   }
-
-}
-
-@media screen and (min-width: 64em) {
-
-}
-
-@media screen and (min-width: 80em) {
-
 }
