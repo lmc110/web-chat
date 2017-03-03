@@ -6,11 +6,13 @@ var randomcolor = require('randomcolor');
 
 var clients = [];
 
+app.set('port', (process.env.PORT || 5000));
+
 app.get('/', function(req, res, next) {
   res.sendFile(__dirname + '/public/index.html')
 });
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 io.on('connection', function(client) {
   console.log('Client connected....');
@@ -55,4 +57,6 @@ io.on('connection', function(client) {
 
 });
 
-server.listen(7777);
+server.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
