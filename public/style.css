@@ -156,7 +156,7 @@ body {
     width: 75%;
   }
 
-  #mySidenav {
+  #mySidenav #online-list {
     position: absolute;
     right: 0.5em;
     top: 3em;
