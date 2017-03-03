@@ -16,9 +16,7 @@ io.on('connection', function(client) {
   console.log('Client connected....');
 
   client.on('join', function(username) {
-    console.log(username);
     var color = randomcolor.randomColor();
-    console.log(color);
     client.user = username;
     clients.push(username);
     client.emit('joined', {
@@ -47,11 +45,10 @@ io.on('connection', function(client) {
   });
 
   client.on('disconnect', function() {
-    console.log('Current users ' + clients.length);
-    console.log(client.user + ' disconnected');
+    //console.log(client.user + ' disconnected');
     clients.splice(clients.indexOf(client.user), 1);
     console.log('Current users ' + clients.length);
-    console.log(clients);
+    //console.log(clients);
     client.emit('updateList', clients);
     client.broadcast.emit('updateList', clients);
   });

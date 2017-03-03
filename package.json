@@ -2,14 +2,28 @@
   "name": "chat-app",
   "version": "1.0.0",
   "description": "web chat application using nodejs",
+  "engines": {
+    "node": "6.10.0"
+  },
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Luis Campos",
   "license": "ISC",
   "dependencies": {
+    "randomcolor": "0.4.4",
     "express": "^4.14.1",
     "socket.io": "^1.7.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lmc110/web-chat"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ]
 }

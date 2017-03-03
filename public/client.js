@@ -1,7 +1,7 @@
 var usersOnline = [];
 
 // initializing socket, connection to server
-var socket = io.connect('http://192.168.1.22:7777');
+var socket = io.connect('http://localhost:5000');
 
 
 function openNav() {
@@ -19,7 +19,6 @@ socket.on('connect', function(data) {
 
 // listener for 'thread' event, which updates messages
 socket.on('thread', function(data) {
-  console.log(data['color']);
   $('#thread').append('<li style="background-color: ' + data['color'] + ';">' + data['nickname'] + " said: " + data['message'] + '</li>');
   $('#chat').scrollTop($('#chat')[0].scrollHeight);
 });
