@@ -1,7 +1,7 @@
 var usersOnline = [];
 
 // initializing socket, connection to server
-var socket = io.connect('http://localhost:5000');
+var socket = io();
 
 
 function openNav() {
