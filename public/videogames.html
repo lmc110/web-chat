@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title> Video Game Chat </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/pure-min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/grids-responsive-min.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <span id="nickname"></span>
+    <div class="room-name" data-room="videogames"></div>
+    <div class="top-bar">
+      <span id="users-icon"><i onclick="openNav()" class="fa fa-users" aria-hidden="true"></i></span>  Video Games Chatroom
+    </div>
+    <div id="chat" class="chat pure-u-1">
+        <ul id="thread">
+
+        </ul>
+    </div>
+
+    <div id="message-input-container" class="pure-u-1">
+      <form class="chat-input" id="message-form">
+        <input id="message" type="text" autocomplete="off" placeholder="Write your message.." />
+        <button type="submit" class="pure-button pure-button-primary"><i class="fa fa-paper-plane-o"></i></button>
+      </form>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div id="online-list">
+        <h2>Users Online</h2>
+        <ul id="roster">
+
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+
+  </body>
+</html>

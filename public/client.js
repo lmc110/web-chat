@@ -1,4 +1,6 @@
-var usersOnline = [];
+//var usersOnline = [];
+var room = $('.room-name').attr('data-room');
+console.log(room);
 
 // initializing socket, connection to server
 var socket = io();
@@ -14,7 +16,15 @@ function closeNav() {
 
 
 socket.on('connect', function(data) {
-  socket.emit('join', prompt("What's your nickname"));
+  console.log(socket.io.engine.id);
+  var id = socket.io.engine.id;
+  var nickname = prompt('What is your nickname?');
+  var temp = {name: nickname, id: id};
+  //usersOnline.push(temp);
+  socket.emit('room', {
+    'room': room,
+    'nickname': nickname
+  });
 });
 
 // listener for 'thread' event, which updates messages
@@ -24,16 +34,25 @@ socket.on('thread', function(data) {
 });
 
 socket.on('joined', function(data) {
-  usersOnline = data['clients'];
+  var usersArray = data['usersOnline'];
   if(!$('#nickname').attr('data-name')) {
     $('#nickname').attr('data-name', data['username']);
     $('#nickname').attr('data-color', data['color']);
   }
-  console.log(usersOnline);
   $('#roster').empty();
+  console.log(data['roomUsers']);
+  for(var userId in data['roomUsers']) {
+    for(var i = 0; i < usersArray.length; i++) {
+      if(userId == usersArray[i]["id"]) {
+        $('#roster').append('<li>' + usersArray[i]["name"] + '</li>');
+      }
+    }
+  }
+  /*
   for(var i = 0; i < usersOnline.length; i++) {
     $('#roster').append('<li>' + usersOnline[i] + '</li>');
   }
+  */
 });
 
 socket.on('updateList', function(data) {
@@ -52,7 +71,8 @@ $('#message-form').submit(function() {
   socket.emit('messages', {
     'message': message,
     'nickname': name,
-    'color': color
+    'color': color,
+    'room': room
   });
   this.reset();
   return false;
