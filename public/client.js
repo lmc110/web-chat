@@ -48,11 +48,6 @@ socket.on('joined', function(data) {
       }
     }
   }
-  /*
-  for(var i = 0; i < usersOnline.length; i++) {
-    $('#roster').append('<li>' + usersOnline[i] + '</li>');
-  }
-  */
 });
 
 socket.on('updateList', function(data) {
@@ -65,11 +60,6 @@ socket.on('updateList', function(data) {
       }
     }
   }
-  /*
-  for(var i = 0; i < usersOnline.length; i++) {
-    $('#roster').append('<li>' + usersOnline[i] + '</li>');
-  }
-  */
 });
 
 // sends messages to server, resets & prevents default form action

@@ -81,8 +81,6 @@ io.on('connection', function(client) {
   });
 
   client.on('disconnect', function() {
-    //console.log(client.user + ' disconnected');
-    //clients.splice(clients.indexOf(client.user), 1);
     console.log(usersOnline);
     for(var i = 0; i < usersOnline.length; i++) {
       if(usersOnline[i]["id"] == client.id) {
@@ -93,8 +91,6 @@ io.on('connection', function(client) {
       }
     }
     client.leave(rm);
-    //console.log('Current users ' + clients.length);
-    //console.log(clients);
     if(io.sockets.adapter.rooms[rm] === undefined) {
       var roomUsers = [];
     }
