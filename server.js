@@ -28,7 +28,7 @@ io.on('connection', function(client) {
     client.join(data['room']);
     var rm = data['room'];
     console.log(client.id);
-    var temp = {name: data['nickname'], id: client.id};
+    var temp = {name: data['nickname'], id: client.id, room: rm};
     usersOnline.push(temp);
     // list with socket ids and length of clients in the room
     //console.log(io.sockets.adapter.rooms['general']);
@@ -82,11 +82,33 @@ io.on('connection', function(client) {
 
   client.on('disconnect', function() {
     //console.log(client.user + ' disconnected');
-    clients.splice(clients.indexOf(client.user), 1);
-    console.log('Current users ' + clients.length);
+    //clients.splice(clients.indexOf(client.user), 1);
+    console.log(usersOnline);
+    for(var i = 0; i < usersOnline.length; i++) {
+      if(usersOnline[i]["id"] == client.id) {
+        var rm = usersOnline[i]["room"];
+        console.log(rm);
+        usersOnline.splice(usersOnline.indexOf(client.user), 1);
+        console.log(usersOnline);
+      }
+    }
+    client.leave(rm);
+    //console.log('Current users ' + clients.length);
     //console.log(clients);
+    if(io.sockets.adapter.rooms[rm] === undefined) {
+      var roomUsers = [];
+    }
+    else {
+      var roomUsers = io.sockets.adapter.rooms[rm].sockets;
+    }
+    io.sockets.in(rm).emit('updateList', {
+      'roomUsers': roomUsers,
+      'usersOnline': usersOnline
+    });
+    /*
     client.emit('updateList', clients);
     client.broadcast.emit('updateList', clients);
+    */
   });
 
 });

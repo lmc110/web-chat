@@ -56,11 +56,20 @@ socket.on('joined', function(data) {
 });
 
 socket.on('updateList', function(data) {
-  usersOnline = data;
+  usersOnline = data['usersOnline'];
   $('#roster').empty();
+  for(var userId in data['roomUsers']) {
+    for(var i = 0; i < usersOnline.length; i++) {
+      if(userId == usersOnline[i]["id"]) {
+        $('#roster').append('<li>' + usersOnline[i]["name"] + '</li>');
+      }
+    }
+  }
+  /*
   for(var i = 0; i < usersOnline.length; i++) {
     $('#roster').append('<li>' + usersOnline[i] + '</li>');
   }
+  */
 });
 
 // sends messages to server, resets & prevents default form action
