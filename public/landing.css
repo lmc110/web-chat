@@ -1,0 +1,17 @@
+body {
+  background-color: #3bc3ad;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.chat-link {
+  padding: 2em;
+  display: inline-block;
+  
+}
