@@ -7,8 +7,10 @@ var randomcolor = require('randomcolor');
 var clients = [];
 var usersOnline = [];
 
+// set listening port for local testing
 app.set('port', (process.env.PORT || 5000));
 
+// send html file when user visits url
 app.get('/', function(req, res, next) {
   res.sendFile(__dirname + '/public/landing.html')
 });
@@ -17,6 +19,11 @@ app.get('/general', function(req, res, next) {
   res.sendFile(__dirname + '/public/general.html')
 });
 
+app.get('/videogames', function(req, res, next) {
+  res.sendFile(__dirname + '/public/videogames.html')
+});
+
+// set public folder for stylesheets
 app.use(express.static(__dirname + '/public'));
 
 io.on('connection', function(client) {

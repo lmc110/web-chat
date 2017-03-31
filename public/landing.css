@@ -4,6 +4,7 @@ body {
 
 a {
   text-decoration: none;
+  color: white;
 }
 
 a:visited {
@@ -13,5 +14,16 @@ a:visited {
 .chat-link {
   padding: 2em;
   display: inline-block;
-  
+  border: 5px solid #1387b1;
+  border-radius: 1em;
+  background-color: #225daa;
+  margin-top: 5em;
+}
+
+#general-chat-link {
+  margin-left: 7em;
+}
+
+#videogames-chat-link {
+  margin-left: 2em;
 }
