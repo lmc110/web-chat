@@ -19,11 +19,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lmc110/web-chat"
+    "url": "git+https://github.com/lmc110/web-chat.git"
   },
   "keywords": [
     "node",
     "heroku",
     "express"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/lmc110/web-chat/issues"
+  },
+  "homepage": "https://github.com/lmc110/web-chat#readme"
 }
